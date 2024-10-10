@@ -114,8 +114,8 @@ To reduce unnecessary processing when idle, Echo listens for a specific wake wor
 ## Acknowledgements
 
 - [SpeechRecognition](https://pypi.org/project/SpeechRecognition/)
-- [eSpeak]()
+- eSpeak
+- [Plyer](https://plyer.readthedocs.io/en/latest/)
 - [NewsAPI](https://newsapi.org/)
 - [OpenWeather](https://openweathermap.org/)
-- [Plyer](https://plyer.readthedocs.io/en/latest/)
 - [JokeAPI](https://jokeapi.dev/)
