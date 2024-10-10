@@ -110,3 +110,12 @@ Once running, Echo will greet you and start listening for your commands. You can
   
 Wake Word Activation
 To reduce unnecessary processing when idle, Echo listens for a specific wake word. By default, you can activate Echo by saying "Wake up Echo". While asleep, Echo will not respond to any commands except the wake word.
+
+## Acknowledgements
+
+- [SpeechRecognition](https://pypi.org/project/SpeechRecognition/)
+- [eSpeak]()
+- [NewsAPI](https://newsapi.org/)
+- [OpenWeather](https://openweathermap.org/)
+- [Plyer](https://plyer.readthedocs.io/en/latest/)
+- [JokeAPI](https://jokeapi.dev/)
