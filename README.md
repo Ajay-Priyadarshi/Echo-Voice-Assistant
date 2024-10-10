@@ -60,14 +60,53 @@ Open the .env file in your favorite text editor and add your API keys:
 NEWS_API_KEY=your_news_api_key_here
 OPENWEATHER_API_KEY=your_openweather_api_key_here
 ```
-News API Key: Sign up at NewsAPI to obtain your API key.
+**News API Key**: Sign up at NewsAPI to obtain your API key.
 
-OpenWeather API Key: Sign up at OpenWeather to obtain your API key.
+**OpenWeather API Key**: Sign up at OpenWeather to obtain your API key.
 
 ## Data Configuration
 Populate the data directory with your preferred websites, applications, and music paths.
 
-Websites: Edit data/websites.py to include website names and URLs.
-Applications: Edit data/applications.py to include application names and their executable paths.
-Music: Edit data/music.py to include song names and their file paths.
+- **Websites:** Edit data/websites.py to include website names and URLs.
+- **Applications:** Edit data/applications.py to include application names and their executable paths.
+- **Music:** Edit data/music.py to include song names and their file paths.
 
+## Usage
+Run the assistant using the following command:
+```bash
+python assistant.py
+```
+Once running, Echo will greet you and start listening for your commands. You can interact with Echo using voice commands such as:
+
+Open a Website or Application:
+
+"Open YouTube"
+"Open Firefox"
+Play Music:
+
+"Play Despacito"
+Get Time and Date:
+
+"What is the time?"
+"Tell me the date."
+Health:
+
+"Calculate BMI"
+News and Weather:
+
+"What's the news?"
+"What's the weather in New York?"
+System Commands:
+
+"Update the system"
+"Increase volume"
+"Set reminder for 18:30 to call John"
+Fun:
+
+"Tell me a joke"
+Sleep and Wake Commands:
+
+"Go to sleep"
+"Wake up Echo"
+Wake Word Activation
+To reduce unnecessary processing when idle, Echo listens for a specific wake word. By default, you can activate Echo by saying "Wake up Echo". While asleep, Echo will not respond to any commands except the wake word.
