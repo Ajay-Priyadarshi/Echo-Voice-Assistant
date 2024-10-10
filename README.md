@@ -35,7 +35,7 @@ Echo is a Python-based voice assistant tailored specifically for Linux environme
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/echo-assistant.git
+git clone https://github.com/Ajay-Priyadarshi/Echo-Voice-Assistant.git
 cd echo-assistant
 ```
 
@@ -61,4 +61,13 @@ NEWS_API_KEY=your_news_api_key_here
 OPENWEATHER_API_KEY=your_openweather_api_key_here
 ```
 News API Key: Sign up at NewsAPI to obtain your API key.
+
 OpenWeather API Key: Sign up at OpenWeather to obtain your API key.
+
+## Data Configuration
+Populate the data directory with your preferred websites, applications, and music paths.
+
+Websites: Edit data/websites.py to include website names and URLs.
+Applications: Edit data/applications.py to include application names and their executable paths.
+Music: Edit data/music.py to include song names and their file paths.
+
