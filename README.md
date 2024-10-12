@@ -26,11 +26,10 @@ Echo is a Python-based voice assistant tailored specifically for Linux environme
 - **Python 3.7 or higher**: Ensure you have Python installed. You can download it from [here](https://www.python.org/downloads/).
 - **pip**: Python package installer.
 - **scrot**: for taking screenshots.
-- **xbacklight**: for handling brightness controls.
 - **eSpeak**: For voice feedback.
 
     ```bash
-    sudo apt-get install espeak scrot xbacklight
+    sudo apt-get install espeak scrot 
     ```
 
 - **Additional Dependencies**: Depending on your system, you might need to install `amixer` for volume control and other utilities.
