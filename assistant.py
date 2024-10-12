@@ -9,8 +9,8 @@ from data.applications import APPLICATIONS
 from commands.websites import openWebsite
 from commands.apps import openApplication
 from commands.music import playMusic
-from commands.utils import say, takeCommand, exitAssistant, handleFallback, is_awake
-from commands.system import updateSystem, changeVolume, setReminder
+from commands.utils import say, takeCommand, exitAssistant, handleFallback
+from commands.system import updateSystem, changeVolume, setReminder, takeScreenshot, setBrightness
 from commands.dateTime import tellTime, tellMonth, tellDate, tellDay, tellYear 
 from commands.health import calculateBMI
 from commands.news import getNews
@@ -33,7 +33,6 @@ def openSomething(target):
 
 # Command Handler
 def handleCommand(query):
-    # Check for reminder command
     if "set reminder" in query:
         try:
             parts = query.split(" ", 3)  # Split into parts
@@ -57,6 +56,8 @@ def handleCommand(query):
         r'\bvolume (increase|decrease|mute|unmute)\b': lambda action: changeVolume(action),
         r'\b(increase|decrease|mute|unmute) volume\b': lambda action: changeVolume(action),
         r'\bcalculate bmi\b' : lambda: calculateBMI(),
+        r'\btake screenshot\b' : lambda: takeScreenshot(),
+        r'\bset brightness to \d+%\b': lambda query: setBrightness(query),
         r'\bthe time\b': tellTime,
         r'\bthe day\b': tellDay,
         r'\bthe date\b': tellDate,
@@ -99,7 +100,7 @@ def main():
             print("Assistant is asleep. Listening for wake-up command...")
             wake_command = takeCommand(listen_for_wake=True)
             if wake_command:
-                if "wake up echo" in wake_command:
+                if "wake up" in wake_command:
                     say("I'm awake.")
                     global_is_awake = True
                 else:

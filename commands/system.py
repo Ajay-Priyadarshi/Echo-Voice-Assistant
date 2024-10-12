@@ -1,8 +1,10 @@
 # commands/system.py
 
 import os
+import re
 import threading
 import datetime
+import subprocess
 from plyer import notification
 from commands.utils import say
 
@@ -49,5 +51,27 @@ def sendNotification(message):
     notification.notify(
         title="Voice-Assistant",
         message=message,
-        timeout=10  # Notification duration in seconds
+        timeout=10  
     )
+
+def takeScreenshot():
+    subprocess.run(['scrot','/home/ryuk/Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png']) # path to ss directory
+    print("Screenshot taken")
+    say("Screenshot taken")
+
+def setBrightness(query):
+    try:
+        # Extract the brightness level from the query (e.g., "set brightness to 70%")
+        match = re.search(r'\b(\d+)%\b', query)
+        if match:
+            level = int(match.group(1))  # Get the captured brightness level
+            if 0 <= level <= 100:
+                subprocess.run(['xbacklight', '-set', str(level)], check=True)
+                say(f"Brightness set to {level}%.")
+            else:
+                say("Please provide a brightness level between 0 and 100%.")
+        else:
+            say("Please specify the brightness percentage, like 'set brightness to 70%'.")
+    
+    except subprocess.CalledProcessError:
+        say("Failed to set brightness.")
