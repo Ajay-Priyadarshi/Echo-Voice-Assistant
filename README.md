@@ -1,4 +1,5 @@
-# Echo - Your Linux Python Voice Assistant
+# Echo - Your Linux Python Voice Assistant 
+![Echo - Your Linux Python Voice Assistant](images/Echo2.png) 
 
 Echo is a Python-based voice assistant tailored specifically for Linux environments, designed to help you manage your daily tasks effortlessly. Whether you need to open applications, check the weather, listen to music, or set reminders, Echo is here to assist you with voice commands.
 
