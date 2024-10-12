@@ -5,12 +5,13 @@ Echo is a Python-based voice assistant tailored specifically for Linux environme
 ## Features
 
 - **Open Websites and Applications**: Launch your favorite websites and Linux applications with simple voice commands.
-- **Music Playback**: Play your preferred songs effortlessly.
+- **Music/Video Playback**: Play your preferred songs and videos.
 - **Date and Time**: Get the current time, date, day, month, and year.
 - **Health Management**: Calculate your BMI quickly.
 - **News Updates**: Stay informed with the latest news headlines.
 - **Weather Information**: Get real-time weather updates for any city.
 - **System Operations**: Update your system, change volume levels, and set reminders.
+- **Package Operations**: Add, update, or remove packages. 
 - **Jokes**: Enjoy a good laugh with random jokes.
 - **Reminders**: Set reminders to keep track of your important tasks.
 - **Voice Interaction**: Interact with Echo using natural language commands.
@@ -101,7 +102,9 @@ Once running, Echo will greet you and start listening for your commands. You can
 #### System Commands:
 - Update the system
 - Increase volume
+- Set brightness to 50%
 - Set reminder for 18:30 to call John
+- Take screenshot
 
 #### Fun:
 - Tell me a joke

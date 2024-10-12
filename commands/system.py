@@ -1,7 +1,6 @@
 # commands/system.py
 
 import os
-import re
 import threading
 import datetime
 import subprocess
@@ -59,19 +58,30 @@ def takeScreenshot():
     print("Screenshot taken")
     say("Screenshot taken")
 
-def setBrightness(query):
+def setBrightness(level):
     try:
-        # Extract the brightness level from the query (e.g., "set brightness to 70%")
-        match = re.search(r'\b(\d+)%\b', query)
-        if match:
-            level = int(match.group(1))  # Get the captured brightness level
-            if 0 <= level <= 100:
-                subprocess.run(['xbacklight', '-set', str(level)], check=True)
+        level = int(level)  
+        if 0 <= level <= 100:
+            # Fetch the display name dynamically
+            output = subprocess.check_output(['xrandr']).decode('utf-8')
+            display_name = None
+            
+            for line in output.splitlines():
+                if " connected" in line:
+                    display_name = line.split()[0]  # Get the display name
+                    break
+            
+            if display_name:
+                brightness_value = level / 100  
+                subprocess.run(['xrandr', '--output', display_name, '--brightness', str(brightness_value)], check=True)
                 say(f"Brightness set to {level}%.")
             else:
-                say("Please provide a brightness level between 0 and 100%.")
+                say("Could not determine the display name.")
         else:
-            say("Please specify the brightness percentage, like 'set brightness to 70%'.")
-    
+            say("Please provide a brightness level between 0 and 100%.")
+    except ValueError:
+        say("Invalid brightness level. Please provide a number between 0 and 100.")
     except subprocess.CalledProcessError:
-        say("Failed to set brightness.")
+        say("Failed to set brightness. Please ensure xrandr is installed and configured correctly.")
+    except Exception as e:
+        say(f"An error occurred: {str(e)}")

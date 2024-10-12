@@ -19,9 +19,9 @@ def takeCommand(listen_for_wake=False):
 
         try:
             if listen_for_wake:
-                audio = recognizer.listen(source, timeout=5000, phrase_time_limit=5000)  # 10 seconds for wake word detection
+                audio = recognizer.listen(source, timeout=5, phrase_time_limit=5)  
             else:
-                audio = recognizer.listen(source, timeout=3, phrase_time_limit=3)  # Shorter timeout for active listening
+                audio = recognizer.listen(source, timeout=3, phrase_time_limit=3)  
         except sr.WaitTimeoutError:
             return ""
 

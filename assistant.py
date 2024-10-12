@@ -12,6 +12,7 @@ from commands.music import playMusic
 from commands.utils import say, takeCommand, exitAssistant, handleFallback
 from commands.system import updateSystem, changeVolume, setReminder, takeScreenshot, setBrightness
 from commands.dateTime import tellTime, tellMonth, tellDate, tellDay, tellYear 
+from commands.package import updatePackages, installPackage, removePackage
 from commands.health import calculateBMI
 from commands.news import getNews
 from commands.weather import getWeather
@@ -45,11 +46,26 @@ def handleCommand(query):
         except Exception as e:
             say(f"Sorry, couldn't set the reminder: {str(e)}")
         return
+    
+    if "set brightness" in query:
+        try:
+            match = re.search(r'set brightness to (\d+)', query)
+            if match:
+                brightness_value = match.group(1)  # Extract the brightness value (only the number)
+                setBrightness(brightness_value)
+            else:
+                say("Please provide a valid brightness level.")
+        except Exception as e:
+            say(f"Sorry, couldn't set brightness: {str(e)}")
+        return
 
     commands = {
         r'\bopen (.+)\b': openSomething,
         r'\bplay (.+)\b': playMusic,
         r'\bupdate the system\b': updateSystem,
+        r'\bupdate packages\b' : updatePackages,
+        r'\binstall package (.+)\b': lambda package: installPackage(package),
+        r'\bremove package (.+)\b': lambda package: removePackage(package),
         r'\bweather in (.+)\b': lambda city: say(getWeather(city)),
         r'\bnews\b': lambda: say(getNews()),
         r'\bjoke?\b': lambda: tellJoke(),
@@ -57,7 +73,6 @@ def handleCommand(query):
         r'\b(increase|decrease|mute|unmute) volume\b': lambda action: changeVolume(action),
         r'\bcalculate bmi\b' : lambda: calculateBMI(),
         r'\btake screenshot\b' : lambda: takeScreenshot(),
-        r'\bset brightness to \d+%\b': lambda query: setBrightness(query),
         r'\bthe time\b': tellTime,
         r'\bthe day\b': tellDay,
         r'\bthe date\b': tellDate,
