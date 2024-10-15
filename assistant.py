@@ -5,9 +5,7 @@ import time
 
 from data.websites import WEBSITES  
 from data.applications import APPLICATIONS
-
-from commands.websites import openWebsite
-from commands.apps import openApplication
+from commands.open import openApplication, openWebsite
 from commands.music import playMusic
 from commands.utils import say, setVoice, takeCommand, exitAssistant, handleFallback
 from commands.system import updateSystem, changeVolume, setReminder, takeScreenshot, setBrightness
