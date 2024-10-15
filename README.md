@@ -16,6 +16,7 @@ Echo is a Python-based voice assistant tailored specifically for Linux environme
 - **Jokes**: Enjoy a good laugh with random jokes.
 - **Reminders**: Set reminders to keep track of your important tasks.
 - **Voice Interaction**: Interact with Echo using natural language commands.
+- **Customizable Voices**: Switch between four available voices – Jack, Jessy, John, and Julie – using voice commands.
 - **Wake Word Activation**: Use a wake word like "Wake up Echo" to activate the assistant, minimizing unnecessary processing when idle.
 
 
@@ -109,10 +110,12 @@ Once running, Echo will greet you and start listening for your commands. You can
 #### Fun:
 - Tell me a joke
 
+### Switch Voice:
+Switch to Jack, Jessy, John (default Jack)
+
 #### Sleep and Wake Commands:
 - Go to sleep
 - Wake up Echo
-  
 Wake Word Activation
 To reduce unnecessary processing when idle, Echo listens for a specific wake word. By default, you can activate Echo by saying "Wake up Echo". While asleep, Echo will not respond to any commands except the wake word.
 

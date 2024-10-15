@@ -2,11 +2,29 @@ import speech_recognition as sr
 import os
 
 is_awake = True
+current_voice_command = "espeak -v en+m3" # default voice jack
 
 def say(text):
     safeText = text.replace('"', '\\"').replace("'", "\\'")
-    os.system(f'espeak "{safeText}"')
+    os.system(f'{current_voice_command} "{safeText}"')
 
+def setVoice(voice):
+    global current_voice_command
+    if voice == "jack":
+        current_voice_command = 'espeak -v en+m3'
+        say("Switched to Jack.")
+    elif voice == "john":
+        current_voice_command = 'espeak -v en+m1'
+        say("Switched to John.")
+    elif voice == "jessy":
+        current_voice_command = 'espeak -v en+f2'
+        say("Switched to Jessy.")
+    elif voice == "julie":
+        current_voice_command = 'espeak -v en+f3'
+        say("Switched to Juli.")
+    else:
+        say("Invalid speaker name.")
+        
 def takeCommand(listen_for_wake=False):
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:

@@ -9,7 +9,7 @@ from data.applications import APPLICATIONS
 from commands.websites import openWebsite
 from commands.apps import openApplication
 from commands.music import playMusic
-from commands.utils import say, takeCommand, exitAssistant, handleFallback
+from commands.utils import say, setVoice, takeCommand, exitAssistant, handleFallback
 from commands.system import updateSystem, changeVolume, setReminder, takeScreenshot, setBrightness
 from commands.dateTime import tellTime, tellMonth, tellDate, tellDay, tellYear 
 from commands.package import updatePackages, installPackage, removePackage
@@ -64,6 +64,7 @@ def handleCommand(query):
         r'\bplay (.+)\b': playMusic,
         r'\bupdate the system\b': updateSystem,
         r'\bupdate packages\b' : updatePackages,
+        r'\bswitch to (jack|john|jessy|julie)\b': lambda voice: setVoice(voice),
         r'\binstall package (.+)\b': lambda package: installPackage(package),
         r'\bremove package (.+)\b': lambda package: removePackage(package),
         r'\bweather in (.+)\b': lambda city: say(getWeather(city)),
