@@ -110,12 +110,13 @@ Once running, Echo will greet you and start listening for your commands. You can
 #### Fun:
 - Tell me a joke
 
-### Switch Voice:
+#### Switch Voice:
 Switch to Jack, Jessy, John (default Jack)
 
 #### Sleep and Wake Commands:
 - Go to sleep
-- Wake up Echo
+- Wake up 
+
 Wake Word Activation
 To reduce unnecessary processing when idle, Echo listens for a specific wake word. By default, you can activate Echo by saying "Wake up Echo". While asleep, Echo will not respond to any commands except the wake word.
 
