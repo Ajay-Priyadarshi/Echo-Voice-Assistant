@@ -115,7 +115,7 @@ def main():
             wake_command = takeCommand(listen_for_wake=True)
             if wake_command:
                 if "wake up" in wake_command:
-                    say("I'm awake.")
+                    say("I am awake.")
                     global_is_awake = True
                 else:
                     say("Currently asleep give wake up commad to proceed.")
