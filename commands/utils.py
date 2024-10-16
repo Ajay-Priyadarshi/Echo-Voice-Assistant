@@ -19,7 +19,7 @@ def setVoice(voice):
     elif voice == "jessy":
         current_voice_command = 'espeak -v en+f2'
         say("Switched to Jessy.")
-    elif voice == "julie":
+    elif voice == "julie" or voice == "juli":
         current_voice_command = 'espeak -v en+f3'
         say("Switched to Juli.")
     else:

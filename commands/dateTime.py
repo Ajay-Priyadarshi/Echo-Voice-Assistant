@@ -1,7 +1,7 @@
 # Time and Date Functions
 
 from datetime import datetime
-from commands import (say)
+from commands.utils import (say)
 
 def tellTime():
     current_time = datetime.now().strftime("%H:%M:%S")

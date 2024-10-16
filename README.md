@@ -11,7 +11,7 @@ Echo is a Python-based voice assistant tailored specifically for Linux environme
 - **Health Management**: Calculate your BMI quickly.
 - **News Updates**: Stay informed with the latest news headlines.
 - **Weather Information**: Get real-time weather updates for any city.
-- **System Operations**: Update your system, change volume levels, and set reminders.
+- **System Operations**: Update your system, change brightness, change volume levels, and set reminders.
 - **Package Operations**: Add, update, or remove packages. 
 - **Jokes**: Enjoy a good laugh with random jokes.
 - **Reminders**: Set reminders to keep track of your important tasks.

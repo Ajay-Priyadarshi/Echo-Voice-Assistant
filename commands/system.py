@@ -15,7 +15,7 @@ def updateSystem():
 
 def changeVolume(action):
     if action == "increase":
-        os.system("amixer -D pulse sset Master 5%+")
+        os.system("amixer -D puls e sset Master 5%+")
         say("Volume increased")
     elif action == "decrease":
         os.system("amixer -D pulse sset Master 5%-")
@@ -54,7 +54,7 @@ def sendNotification(message):
     )
 
 def takeScreenshot():
-    subprocess.run(['scrot','/home/ryuk/Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png']) # path to ss directory
+    subprocess.run(['scrot','/hom e/ryuk/Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png']) # path to ss directory
     print("Screenshot taken")
     say("Screenshot taken")
 
